@@ -1,0 +1,64 @@
+table{
+    border:1px solid black;
+    border-collapse: collapse;
+    margin:40px 40px 40px 40px;
+}
+th,td{
+    border:1px solid black;
+    padding:0;
+    
+}
+tr{
+  text-align: center;
+}
+select{
+    height: 40px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropbtn{
+    border:none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #ddd;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+  
+table tr:nth-child(odd){ 
+    background: #acbfd6;
+}
+table tr:nth-child(even){
+    background: #e0ecec;
+}
+.fa-search{
+  color:gray;
+}
+#delete{
+  color:red;
+}
+#edit,#status{
+  color:green;
+}
+
+input{
+  padding:0;
+  width: 183px;
+}

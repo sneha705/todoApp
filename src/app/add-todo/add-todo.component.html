@@ -1,0 +1,69 @@
+<!-- <form [formGroup]="todoForm" (ngSubmit)="onSubmit()"> -->
+<form [formGroup]="todoForm">       
+<div class="container">
+    
+    <div class="todo">
+        <div class="todoHead">
+                <i class="fas fa-history"></i>
+                <label>Title</label>
+        </div>
+        <input  id="inputName" class="todoInput" type="text" formControlName='name'>
+    </div>
+
+    <div class="todo">
+            <div class="todoHead">
+                    <i class="fas fa-history"></i>
+                    <label>Description</label>
+            </div>
+            <input  class="todoTextArea" type="textArea" formControlName='description'>
+    </div>
+
+    <div class="time">
+            <div class="todoDate">
+                    <div class="timeHead">
+                            <i class="fas fa-history"></i>
+                            <label>Date</label>
+                    </div>
+                       <input class="timeInput" type="date" formControlName='dueDate'>
+            </div>
+
+            <div class="todoTime">
+                    <div class="timeHead">
+                            <i class="fas fa-history"></i>
+                            <label>Priority</label>
+                    </div>
+                    <!-- <input  class="timeInput" type="text" formControlName='priority' required> -->
+                    <input class="priority1"  type="radio" formControlName="priority" value=1 
+                    [checked]="editObj.priority==1" >1
+                    <input class="priority1"  type="radio" formControlName="priority" value=2
+                    [checked]="editObj.priority==2">2
+                    <input class="priority1"  type="radio" formControlName="priority" value=3
+                    [checked]="editObj.priority==3">3
+                    <input class="priority1"  type="radio" formControlName="priority" value=4
+                    [checked]="editObj.priority==4">4
+                    <input class="priority1"  type="radio" formControlName="priority" value=5
+                    [checked]="editObj.priority==5">5
+            </div>
+    </div>
+
+
+    <div class="btn">
+        <!-- <button type='submit' [disabled]='!todoForm.valid' *ngIf="!editObj"   (click)="onSubmit()">Save</button>
+        <button id="update" type="submit" *ngIf="editObj" (click)="onUpdate()">update</button> -->
+       
+     
+        <button type='submit' [disabled]='!todoForm.valid'  (click)="onSubmit()">Save</button>
+        <button id="addNext" type='reset'  (click)="resetDate()">AddNext</button>
+
+    </div>
+    <div>
+        <button id="update" type="submit" (click)="onUpdate()">update</button>
+    </div>
+  
+  
+
+</div>
+
+</form>
+
+

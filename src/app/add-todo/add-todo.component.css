@@ -1,0 +1,80 @@
+label{
+   
+   margin-left:5px;
+   display:inline-block;
+   color:white;
+   
+}
+#inputName{
+    text-transform: capitalize;
+}
+/* input:first-letter{
+    text-transform: uppercase;
+} */
+.todo{
+    margin:30px 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.todoHead,.timeHead{
+    background-color: rgba(143, 25, 211, 0.993);
+    height:40;
+    padding:20px 0px 10px 10px;
+   
+}
+i{
+    color:white;
+}
+.todoInput,.timeInput{
+    width:99.3%;
+    height: 40px;
+}
+.todoTextArea{
+    width:99.3%;
+    height: 90px;
+}
+
+.todoDate{
+    width:42%;
+    display:inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    
+}
+.todoTime{
+    display:inline-block;
+    width:42%;
+    margin-left: 66px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+   
+}
+.time{
+    padding-left: 35px;
+}
+.container{
+    padding:40px 300px 40px 400px;
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .timeInput{
+      width:98.2%;
+  }
+ .priority1{
+    padding:3px 3px 3px 3px;
+}
+button{
+    width:250px;
+    height:40px;  
+    margin-top:20px;
+}
+.btn{
+padding-left:36px;
+}
+#addNext{
+    margin-left: 68px;  
+}
+
+#update{
+    width: 570px;
+    margin-left: 35px;
+}
