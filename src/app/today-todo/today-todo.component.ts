@@ -17,15 +17,15 @@ export class TodayTodoComponent implements OnInit {
   showTodoData() {
     this.service.getData()
       .subscribe((data) => {
-       this.todoData = data;
-      this.obj=this.todoData;
+        this.todoData = data;
+        this.searchData(this.todoData);
+       
       });
   }
 
-  searchData(){
+  searchData(todoData){
    let value=(this.datePipe.transform(new Date, 'yyyy-MM-dd'));
-   this.obj= this.todoData
-        .filter(function(event){
+       this.obj=todoData.filter(function(event){
         return event.dueDate.indexOf(value) >- 1 
       })
   }

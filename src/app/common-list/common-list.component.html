@@ -67,10 +67,11 @@
                             <td>{{i.createdAt|date : 'hh:mm:ss'}}</td>
                             <td>{{i.priority}}</td>
                            <!-- <li> <nav><a class="liTab" routerLink="/addTodo">AddTodo</a></nav></li> -->
-                            <td><nav><a routerLink="/addTodo"  (click)='service.todoEditObj(i,i._id)'><i id="edit" class="fa fa-pencil-square-o" aria-hidden="true"  ></i></a></nav>
+                            <td><nav><a routerLink="/addTodo"  (click)='service.todoEditObj(i,i._id)'><button><i id="edit" class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></nav>
                             </td>
                             <td><i class="fa fa-check-circle-o" aria-hidden="true" id="status"></i></td>
-                            <td (click)="deleteTodoData(i._id)"><button><i class="fa fa-trash-o" id="delete" aria-hidden="true"></i></button></td>
+                            <td (click)="deleteTodoData(i._id)"><button id="delete" >
+                                    <i class="fa fa-trash-o fa-lg"></i></button></td>
                         </tr>
                       
                      

@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(143, 15, 247);
+    background-color:rgb(230, 221, 221);
     height: 46px;
   
   }
@@ -20,15 +20,25 @@
   
  li a {
     display: block;
-    color:  white;
+    /* color:  black; */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-weight: 400px
+    font-weight: 400px;
+    font-size: 20px;
   }
   li a:hover {
     display: block;
     color:  black;
     font-size: 20px;
   
+  }
+  .activeTab{
+    background-color: rgb(143, 15, 247);
+    font-weight:300px;
+    font-size: 20px;
+    color:white;
+
+
+   
   }

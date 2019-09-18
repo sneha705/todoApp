@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {TodoDataService} from '../todo-data.service';
 import { DatePipe } from '@angular/common';
-
+import { Validators } from '@angular/forms';
 
  
 @Component({
@@ -14,7 +14,7 @@ import { DatePipe } from '@angular/common';
 export class AddTodoComponent implements OnInit {
   editObj;
   dateInput=true;
-  hideBtn=true;
+  hideUpdateBtn=true;
   editDate="";
   
   constructor(private fb: FormBuilder,
@@ -22,10 +22,10 @@ export class AddTodoComponent implements OnInit {
     private datePipe: DatePipe,) {}  
 
   todoForm=this.fb.group({
-    name :[],
+    name :['', Validators.required],
     description:[],
-    dueDate:[],
-    priority:[],
+    dueDate:['', Validators.required],
+    priority:['', Validators.required],
     });
 
 
@@ -44,7 +44,7 @@ export class AddTodoComponent implements OnInit {
    }
   
    btnHide(){
-    this.hideBtn=false
+    this.hideUpdateBtn=false
    }
 
    //firdt letter capital

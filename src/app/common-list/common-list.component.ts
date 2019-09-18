@@ -21,6 +21,7 @@ export class CommonListComponent implements OnInit {
     this.service.getData()
       .subscribe((data) => {
         this.todoData = data;
+      
       });
   }
   deleteTodoData(id: string) {
@@ -35,12 +36,14 @@ export class CommonListComponent implements OnInit {
       .then((willDelete) => {
         if (willDelete) {
           this.service.deleteTodoData(id).
-            subscribe();
+            subscribe( );
           swal("Poof! Sucessfully deleted Your Todo Task", {
             icon: "success",
           });
         }
+      
       });
+     
   }
 
   sorting(keyName) {
