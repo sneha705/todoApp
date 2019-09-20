@@ -17,6 +17,23 @@
             </div>
             <input  class="todoTextArea" type="textArea" formControlName='description'>
     </div>
+    <div class="todo1">
+        <div class="todoHead">
+                <i class="fas fa-history"></i>
+                <label>Priority</label>
+        </div>
+        <!-- <input  class="timeInput" type="text" formControlName='priority' required> -->
+        <input class="priority1"  type="radio" formControlName="priority" value=1 
+        [checked]="editObj.priority==1" >1 
+        <input class="priority1"  type="radio" formControlName="priority" value=2
+        [checked]="editObj.priority==2">2 
+        <input class="priority1"  type="radio" formControlName="priority" value=3
+        [checked]="editObj.priority==3">3 
+        <input class="priority1"  type="radio" formControlName="priority" value=4
+        [checked]="editObj.priority==4">4 
+        <input class="priority1"  type="radio" formControlName="priority" value=5
+        [checked]="editObj.priority==5">5 
+</div>
 
     <div class="time">
             <div class="todoDate">
@@ -25,48 +42,38 @@
                             <label>Date</label>
                     </div>
                        <input class="timeInput" type="date" formControlName='dueDate'>
-            </div>
-               <div class="todoTime">
-                <div class="timeHead">
-                        <i class="fas fa-history"></i>
-                        <label>Status</label>
+                    </div>
+                    
+               <div class="todoTime1">
+                        <div class="timeHead">
+                                <i class="fas fa-history"></i>
+                                <label>Status</label>
+                        </div>
+                        <input class="priority1"  type="radio"  value=Done >Done 
+                        <input class="priority1"  type="radio" value=Pending>Pending
                 </div>
-                <input class="priority1"  type="radio"  value=Done >Done 
-                <input class="priority1"  type="radio" value=Pending>Pending
-            </div>
       
   </div>
         
-        <div class="todo">
-                <div class="todoHead">
-                        <i class="fas fa-history"></i>
-                        <label>Priority</label>
-                </div>
-                <!-- <input  class="timeInput" type="text" formControlName='priority' required> -->
-                <input class="priority1"  type="radio" formControlName="priority" value=1 
-                [checked]="editObj.priority==1" >1 
-                <input class="priority1"  type="radio" formControlName="priority" value=2
-                [checked]="editObj.priority==2">2 
-                <input class="priority1"  type="radio" formControlName="priority" value=3
-                [checked]="editObj.priority==3">3 
-                <input class="priority1"  type="radio" formControlName="priority" value=4
-                [checked]="editObj.priority==4">4 
-                <input class="priority1"  type="radio" formControlName="priority" value=5
-                [checked]="editObj.priority==5">5 
-        </div>
+ 
+
+  
+      
+
    
     
 
     <div class="btn">
         <!-- <button type='submit' [disabled]='!todoForm.valid' *ngIf="!editObj"   (click)="onSubmit()">Save</button>
         <button id="update" type="submit" *ngIf="editObj" (click)="onUpdate()">update</button> -->
-       
+       <div>
                 <div *ngIf="!editObj ||!hideUpdateBtn " >
                         <button type='submit' [disabled]="!todoForm.valid" (click)="onSubmit()">Save</button>
                 </div>
                 <div>
                         <button id="update" type="submit" (click)="onUpdate()"  *ngIf="editObj && hideUpdateBtn">update</button>
                 </div>
+        </div>
                 
                 <div class="addNextBtn">
                                 <button id="addNext" type='reset'  (click)="resetDate(); btnHide()" >AddNext</button>

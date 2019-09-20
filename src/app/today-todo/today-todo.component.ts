@@ -43,9 +43,14 @@ export class TodayTodoComponent implements OnInit {
 
   ngOnInit() {
     this.showTodoData();
-    //this.searchData()
-  //console.log(this.obj)
+    
   
    
   }
+
+  deletetodo(event){
+   this.obj = this.obj.filter(function( todo ) {
+                return todo._id !==event
+               });
+   }
 }

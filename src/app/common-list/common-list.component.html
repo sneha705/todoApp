@@ -1,86 +1,96 @@
 <div class="containner">
-        <div class="wrapper">
-            <div class="list">
-                <table id='todoTable'>
-                    <tr>
-                            <th ><input placeholder="search"  #searchId (input)="searchData(searchId.value,'_id')">
-                               </th>
-        
-        
-        
-                            <th ><input placeholder="search" #searchName  (input)="searchData(searchName.value,'name')">
-                               </th>
-        
-                                
-                            <th ><input placeholder="search" #searchDescription  (input)="searchData(searchDescription.value,'description')">
-                              </th>
-        
-                            <th ><input placeholder="search yyyy-MM-dd"  #searchDate  (input)="searchData(searchDate.value,'dueDate')">
-                               </th>
-                            <th ><input placeholder="search"  #searchTime  (input)="searchData(searchTime.value,'createdAt')">
-                                 </th>
-                            
-                            </tr>
-        
-                            <tr>
-                                <th rowspan="2">Id
-                                      
-                                        <button class="dropbtn" (click)="sorting('_id')"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                                      
-                                </th>
-                                <th rowspan="2">Title 
-                                   
-                                        <button class="dropbtn" (click)="obj.sort(sorting('name'))"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                                   
-                                </th>
-                                <th rowspan="2">Description
-                                      
-                                </th>
-                                <th rowspan="2">Date
-                                        <button class="dropbtn" (click)="sorting('dueDate')"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                                </th>
-                                 <th rowspan="2">Time
-                                   
-                                            <button class="dropbtn" (click)="sorting('createdAt')"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                                           
-                        
-                                 </th>
-                                 <th rowspan="2">Priority
-                                            <button class="dropbtn" (click)="sorting('priority')"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                                </th>
-                                 <th rowspan="2">Edit</th>
-                                 <th colspan="2">Action</th>
-                                 </tr>
-        
-                                <tr>
-                                <th>Status</th>
-                                <th>Delete</th>
-                                
-                                 </tr>  
-                    
-                    
-                        <tr *ngFor='let i of obj'>
-                            <td >{{i._id}}</td>
-                            <td>{{i.name}}</td>
-                            <td>{{i.description}}</td>
-                            <td>{{i.dueDate|date : 'dd/MM/yyyy'}}</td>
-                            <td>{{i.createdAt|date : 'hh:mm:ss'}}</td>
-                            <td>{{i.priority}}</td>
-                           <!-- <li> <nav><a class="liTab" routerLink="/addTodo">AddTodo</a></nav></li> -->
-                            <td><nav><a routerLink="/addTodo"  (click)='service.todoEditObj(i,i._id)'><button><i id="edit" class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></nav>
-                            </td>
-                            <td><i class="fa fa-check-circle-o" aria-hidden="true" id="status"></i></td>
-                            <td (click)="deleteTodoData(i._id)"><button id="delete" >
-                                    <i class="fa fa-trash-o fa-lg"></i></button></td>
-                        </tr>
-                      
-                     
-                </table>
-        
-            
-            </div>
-          
-        
+    <div class="wrapper">
+        <div class="list">
+            <table id='todoTable'>
+                <tr>
+                    <th><input placeholder="search" #searchId (input)="searchData(searchId.value,'_id')">
+                    </th>
+
+
+
+                    <th><input placeholder="search" #searchName (input)="searchData(searchName.value,'name')">
+                    </th>
+
+
+                    <th><input placeholder="search" #searchDescription
+                            (input)="searchData(searchDescription.value,'description')">
+                    </th>
+
+                    <th><input placeholder="search yyyy-MM-dd" #searchDate
+                            (input)="searchData(searchDate.value,'dueDate')">
+                    </th>
+                    <th><input placeholder="search" #searchTime (input)="searchData(searchTime.value,'createdAt')">
+                    </th>
+
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Id
+
+                        <button class="dropbtn" (click)="sorting('_id')"><i class="fa fa-caret-down"
+                                aria-hidden="true"></i></button>
+
+                    </th>
+                    <th rowspan="2">Title
+
+                        <button class="dropbtn" (click)="obj.sort(sorting('name'))"><i class="fa fa-caret-down"
+                                aria-hidden="true"></i></button>
+
+                    </th>
+                    <th rowspan="2">Description
+
+                    </th>
+                    <th rowspan="2">Date
+                        <button class="dropbtn" (click)="sorting('dueDate')"><i class="fa fa-caret-down"
+                                aria-hidden="true"></i></button>
+                    </th>
+                    <th rowspan="2">Time
+
+                        <button class="dropbtn" (click)="sorting('createdAt')"><i class="fa fa-caret-down"
+                                aria-hidden="true"></i></button>
+
+
+                    </th>
+                    <th rowspan="2">Priority
+                        <button class="dropbtn" (click)="sorting('priority')"><i class="fa fa-caret-down"
+                                aria-hidden="true"></i></button>
+                    </th>
+                    <th rowspan="2">Edit</th>
+                    <th colspan="2">Action</th>
+                </tr>
+
+                <tr>
+                    <th>Status</th>
+                    <th>Delete</th>
+
+                </tr>
+
+
+                <tr *ngFor='let i of obj'>
+                    <td>{{i._id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.description}}</td>
+                    <td>{{i.dueDate|date : 'dd/MM/yyyy'}}</td>
+                    <td>{{i.createdAt|date : 'hh:mm:ss'}}</td>
+                    <td>{{i.priority}}</td>
+
+                    <td id="edit">
+                        <nav><a routerLink="/addTodo" (click)='service.todoEditObj(i,i._id)'>
+                                <i  class="fa fa-pencil-square-o" aria-hidden="true"></i></a></nav>
+                    </td>
+                    <td (click)="statusTodoData(i)">
+                        {{i.name}}
+                    </td>
+                    <td (click)="deleteTodoData(i._id)"><i class="fa fa-trash-o fa-lg"></i></td>
+                </tr>
+
+
+            </table>
+
+
         </div>
-        </div>
-        <router-outlet></router-outlet>
+
+
+    </div>
+</div>
+<router-outlet></router-outlet>

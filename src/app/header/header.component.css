@@ -42,3 +42,25 @@
 
    
   }
+  img{
+    display:inline-block;
+    width:70px;
+  }
+  #logoDiv{
+    width:10%;
+    display:inline-block;
+   padding-bottom: 0px;
+   height:30px;
+ 
+}
+#nameDiv{
+    width:60%px;
+    display:inline-block;
+    margin-left:-5%;
+}
+.logoHead{
+  height:71px;
+}
+span{
+  color:rgb(143, 15, 247);
+}

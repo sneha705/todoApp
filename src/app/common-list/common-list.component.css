@@ -3,19 +3,23 @@ table{
     border-collapse: collapse;
     margin:40px 40px 40px 40px;
 }
-th,td{
-    border:1px solid black;
+td{
+    border:1px solid rgba(122, 108, 108, 0.342);
     padding:0;
-   
-    
 }
 th{
-  background-color:rgb(230, 221, 221);
-  color: rgba(143, 25, 211, 0.993);
+  background-color: rgba(143, 25, 211, 0.993);
+  border:1px solid white;
+  color:white;
+  height:0px;
+  padding:0;
 }
 tr{
+  background-color:rgb(230, 221, 221);
+  color: black;
   text-align: center;
- 
+  height:40px;
+  
 }
 select{
     height: 40px;
@@ -28,29 +32,19 @@ select{
     border:none;
   }
   
+tr:hover{
+  background-color:rgba(150, 109, 167, 0.993); 
+   color:white;
+}
 
-  .dropdown-content a:hover {background-color: #ddd;}
-
-  .dropdown:hover .dropdown-content {display: block;}
-  
-table tr:nth-child(odd){ 
-    background: #c2acd6;
-}
-table tr:nth-child(even){
-    background: #dcd5df;
-}
-.fa-search{
-  color:gray;
-}
-#delete{
- 
-  width:40px;
-}
 #edit,#status{
-  color:green;
+  color:black;
+  font-weight:bolder;
+  width:88px;
 }
 
 input{
   padding:0;
-  width: 183px;
+  width: 185px;
+  height:40px
 }

@@ -5,4 +5,5 @@ export class todoDataformat {
     dueDate:  string;
     createdAt: string;
     priority:  string;
+    status: string;
   }

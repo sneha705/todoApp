@@ -11,9 +11,13 @@ label{
 /* input:first-letter{
     text-transform: uppercase;
 } */
-.todo{
+.todo,.todo1{
     margin:30px 30px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+.todo1,.todoTime1{
+    height:93px;
 }
 .todoHead,.timeHead,.todoStatus{
     background-color: rgba(143, 25, 211, 0.993);
@@ -33,6 +37,7 @@ i{
     height: 90px;
 }
 
+
 .todoDate{
     width:42%;
     display:inline-block;
@@ -40,7 +45,7 @@ i{
 
     
 }
-.todoTime,.statusTime{
+.todoTime,.statusTime,.todoTime1{
     display:inline-block;
     width:42%;
     margin-left: 66px;
@@ -70,9 +75,10 @@ button{
 }
 .btn{
 padding-left:36px;
+display:inline-block;
 }
 #addNext{
-    margin-left: 68px; 
+    margin-left: 320px;
     float: right;
     margin-top: -40px; 
 }

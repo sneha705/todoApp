@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../todo-data.service'
 
 
-
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -10,23 +9,27 @@ import { TodoDataService } from '../todo-data.service'
 })
 
 export class ListComponent implements OnInit {
-  obj=null;
-  todoData= null;
-  constructor(private service: TodoDataService) {}
- 
+  id = null;
+  obj = null;
+  data1 = null;
+  todoData = null;
+  constructor(private service: TodoDataService) { }
+
   showTodoData() {
     this.service.getData()
       .subscribe((data) => {
-      // this.todoData = data;
-       //this.obj =this.todoData ;
-       this.obj=data;
+        this.obj = data;
       });
   }
-
-
 
   ngOnInit() {
     this.showTodoData();
   }
+  deletetodo(event) {
+    this.obj = this.obj.filter(function (todo) {
+      return todo._id !== event
+    });
+  }
+
 }
 
