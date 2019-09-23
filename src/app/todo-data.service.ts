@@ -30,54 +30,31 @@ export class TodoDataService {
 
   addTodoData(data: todoDataformat) {
     let addData = JSON.stringify(data)
-    //console.log(addData)
-    return this.http.post(this.todoDataUrl, addData, this.httpOptions)
-      .subscribe(
-        (val) => {
-          swal("Successfully!", "One Todo task ADDED", "success");
-        },
-        response => {
-          alert("Internal Data Entry Error");
-        });
+    return this.http.post(this.todoDataUrl, addData, this.httpOptions)  
   }
 
 
   deleteTodoData(id: string): Observable<{}> {
     const url = `${this.todoDataUrl}/${id}`;
-
     return this.http.delete(url, this.httpOptions)
-
   }
 
   todoEditObj(i, id) {
     this.EditObj = i;
-    this.editObjId = id
-    //console.log(this.editObjId);
+    this.editObjId = id;
   }
 
   editTodoData(data: todoDataformat) {
-    // let editData=JSON.stringify(data)
-
-    const editUrl = `${this.todoDataUrl}/${this.editObjId}`
-
+    const editUrl = `${this.todoDataUrl}/${this.editObjId}`;
     console.log(editUrl);
-
-    return this.http.put<todoDataformat>(editUrl, data, this.httpOptions)
-      .subscribe(
-        (val) => {
-          swal("Successfully!", "One Todo task UPDATED", "success");
-        },
-        response => {
-          alert("Internal Data Entry Error");
-        });
+    return this.http.put<todoDataformat>(editUrl, data, this.httpOptions);
   }
 
   statusTodoData(item) {
     item.dueDate = (this.datePipe.transform(item.dueDate, 'yyyy-MM-dd'));
     let data = { "name": "Done", 'dueDate': item.dueDate,"description":item.description};
-    const statusUrl = `${this.todoDataUrl}/${item._id}`
-   
-    return this.http.put(statusUrl, data, this.httpOptions)
+    const statusUrl = `${this.todoDataUrl}/${item._id}`;
+    return this.http.put(statusUrl, data, this.httpOptions);
 
   }
 }

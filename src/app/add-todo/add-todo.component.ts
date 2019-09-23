@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import {TodoDataService} from '../todo-data.service';
 import { DatePipe } from '@angular/common';
 import { Validators } from '@angular/forms';
-
+declare var swal: any;
  
 @Component({
   selector: 'app-add-todo',
@@ -15,12 +15,12 @@ export class AddTodoComponent implements OnInit {
   editObj;
   dateInput=true;
   hideUpdateBtn=true;
-  editDate="";
+  editDate=null;
   
   constructor(private fb: FormBuilder,
     private todoService:TodoDataService,
     private datePipe: DatePipe,) {}  
-
+  
   todoForm=this.fb.group({
     name :['', Validators.required],
     description:[],
@@ -29,14 +29,31 @@ export class AddTodoComponent implements OnInit {
     });
 
 
+  
 
    onSubmit(){
-    //console.warn(this.todoForm.value);
-    this.todoService. addTodoData(this.todoForm.value)
+   
+  
+  
+    //if (this.todoForm.value==this.obj) { return; }
+    this.todoService. addTodoData(this.todoForm.value).
+      subscribe((val) => {
+          swal("Successfully!", "One Todo task ADDED", "success");
+        },
+        error => {
+          alert("Internal Data Entry Error");
+        });
    //console.log(this.todoForm.value)
    }
   onUpdate(){
-    this.todoService.editTodoData(this.todoForm.value)
+    this.todoService.editTodoData(this.todoForm.value).
+    subscribe(
+      (val) => {
+        swal("Successfully!", "One Todo task UPDATED", "success");
+      },
+      response => {
+        alert("Internal Data Entry Error");
+      });
   }
 
    resetDate(){
@@ -47,7 +64,7 @@ export class AddTodoComponent implements OnInit {
     this.hideUpdateBtn=false
    }
 
-   //firdt letter capital
+  
    
   ngOnInit() {
   this.editObj=this.todoService.EditObj;

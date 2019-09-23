@@ -14,14 +14,12 @@ declare var swal: any;
 export class CommonListComponent implements OnInit {
 
   @Input() obj;
-  //@Input() objFunc:Function;
-
   @Output() deleteTodo = new EventEmitter();
- // @Output() statusTodo = new EventEmitter();
-  search = null;
-  todoData = null;
-  constructor(private service: TodoDataService) { }
 
+  search = null;
+  todoData =null;
+
+  constructor(private service: TodoDataService) { }
 
   deleteTodoData(id: string) {
 
@@ -78,7 +76,15 @@ export class CommonListComponent implements OnInit {
   }
 
 
+  searchData(value, keyName) {
+ //this.todoData = this.obj;
+  
+    this.obj = this.todoData.filter(function (event) {
+      return (event[keyName]).indexOf(value) > -1
+    
+    })
 
+  }
 
 
 
@@ -96,16 +102,11 @@ export class CommonListComponent implements OnInit {
 
 
 
-  searchData(value, keyName) {
-    this.todoData = this.obj;
-    this.obj = this.todoData.filter(function (event) {
-      return (event[keyName]).indexOf(value) > -1
-    })
 
-  }
 
   ngOnInit() {
 
+setTimeout(()=>(this.todoData = this.obj),2000);
 
   }
 }
