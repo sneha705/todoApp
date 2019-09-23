@@ -34,7 +34,7 @@
   
   }
   .activeTab{
-    background-color: rgb(143, 15, 247);
+    background-color: rgba(143, 25, 211, 0.993);
     font-weight:300px;
     font-size: 20px;
     color:white;
@@ -44,7 +44,8 @@
   }
   img{
     display:inline-block;
-    width:70px;
+    margin-left: 4px;
+    width: 63px;
   }
   #logoDiv{
     width:10%;
@@ -57,10 +58,13 @@
     width:60%px;
     display:inline-block;
     margin-left:-5%;
+ 
 }
 .logoHead{
   height:71px;
+ 
 }
 span{
   color:rgb(143, 15, 247);
+
 }

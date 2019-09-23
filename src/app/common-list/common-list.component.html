@@ -76,12 +76,12 @@
 
                     <td id="edit">
                         <nav><a routerLink="/addTodo" (click)='service.todoEditObj(i,i._id)'>
-                                <i  class="fa fa-pencil-square-o" aria-hidden="true"></i></a></nav>
+                               <button><i  class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></nav>
                     </td>
                     <td (click)="statusTodoData(i)">
                         {{i.name}}
                     </td>
-                    <td (click)="deleteTodoData(i._id)"><i class="fa fa-trash-o fa-lg"></i></td>
+                    <td (click)="deleteTodoData(i._id)"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
                 </tr>
 
 

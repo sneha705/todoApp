@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'list', component:ListComponent },
   { path: 'todayTodo', component:TodayTodoComponent },
   { path: 'edit', component:EditComponent },
+  { path: '', component: AddTodoComponent  },
 ];
 
 @NgModule({
