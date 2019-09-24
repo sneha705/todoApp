@@ -13,16 +13,18 @@ declare var swal: any;
 
 export class CommonListComponent implements OnInit {
 
+  //passing todo data and store in obj
   @Input() obj;
+  //passing deleted id to other component
   @Output() deleteTodo = new EventEmitter();
 
   search = null;
   todoData =null;
 
+ 
   constructor(private service: TodoDataService) { }
-
+//delete function call by service
   deleteTodoData(id: string) {
-
     swal({
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover this Todo Data!",
@@ -35,24 +37,20 @@ export class CommonListComponent implements OnInit {
           this.deleteTodo.emit(id)
           this.service.deleteTodoData(id).
             subscribe(
-
               (val) => {
-                // swal("Poof! Sucessfully deleted Your Todo Task", {
-                //   icon: "success",
-                // });
+                swal("Poof! Sucessfully deleted Your Todo Task", {
+                  icon: "success",
+                });
               },
               response => {
                 alert("Internal Data Entry Error");
               });
-
-
         }
 
       });
   }
-
+//status todo data function call by service
   statusTodoData(item) {
-  
     swal({
       title: "Are you sure?",
       text: "Your Task is completed!!",
@@ -75,23 +73,15 @@ export class CommonListComponent implements OnInit {
       });
   }
 
-
+//search input value in list
   searchData(value, keyName) {
- //this.todoData = this.obj;
-  
     this.obj = this.todoData.filter(function (event) {
       return (event[keyName]).indexOf(value) > -1
     
     })
 
-  }
-
-
-
-
-
-
-
+  } 
+//sorting the list
   sorting(keyName) {
     this.obj.sort(function (a, b) {
       if (a[keyName] < b[keyName]) return -1;
@@ -99,8 +89,6 @@ export class CommonListComponent implements OnInit {
       return 0;
     });
   }
-
-
 
 
 

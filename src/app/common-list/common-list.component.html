@@ -3,28 +3,25 @@
         <div class="list">
             <table id='todoTable'>
                 <tr>
+                    <!-- search row -->
                     <th><input placeholder="search" #searchId (input)="searchData(searchId.value,'_id')">
                     </th>
-
-
-
                     <th><input placeholder="search" #searchName (input)="searchData(searchName.value,'name')">
                     </th>
-
-
                     <th><input placeholder="search" #searchDescription
-                            (input)="searchData(searchDescription.value,'description')">
+                       (input)="searchData(searchDescription.value,'description')">
                     </th>
-
                     <th><input placeholder="search yyyy-MM-dd" #searchDate
                             (input)="searchData(searchDate.value,'dueDate')">
                     </th>
                     <th><input placeholder="search" #searchTime (input)="searchData(searchTime.value,'createdAt')">
                     </th>
+                    
 
                 </tr>
 
                 <tr>
+                    <!-- header with sorting row -->
                     <th rowspan="2">Id
 
                         <button class="dropbtn" (click)="sorting('_id')"><i class="fa fa-caret-down"
@@ -65,7 +62,7 @@
 
                 </tr>
 
-
+                <!-- entry of JSON data in table -->
                 <tr *ngFor='let i of obj'>
                     <td>{{i._id}}</td>
                     <td>{{i.name}}</td>
@@ -73,15 +70,17 @@
                     <td>{{i.dueDate|date : 'dd/MM/yyyy'}}</td>
                     <td>{{i.createdAt|date : 'hh:mm:ss'}}</td>
                     <td>{{i.priority}}</td>
-
+                    <!-- edit data coloumn -->
                     <td id="edit">
                         <nav><a routerLink="/addTodo" (click)='service.todoEditObj(i,i._id)'>
                                <button><i  class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></nav>
                     </td>
+                    <!-- status column of task -->
                     <td >
                         <span *ngIf="i.name=='Done'"><i  id="done" class="fa fa-check-circle" aria-hidden="true"></i></span>
                         <span *ngIf="i.name!='Done'"  (click)="statusTodoData(i)"><button id="pending"><i id="pending" class="fa fa-bullseye" aria-hidden="true"></i></button> </span>
                     </td>
+                    <!-- delete button column -->
                     <td (click)="deleteTodoData(i._id)"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
                 </tr>
 
