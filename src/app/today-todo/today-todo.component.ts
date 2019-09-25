@@ -10,6 +10,7 @@ import { DatePipe } from '@angular/common';
 export class TodayTodoComponent implements OnInit {
   obj=null;
   todoData= null;
+  todoData1=null;
 
   constructor(private service: TodoDataService,
     private datePipe: DatePipe,) {}
@@ -21,6 +22,7 @@ export class TodayTodoComponent implements OnInit {
         this.searchData(this.todoData);
        
       });
+
   }
 
   searchData(todoData){
@@ -28,6 +30,7 @@ export class TodayTodoComponent implements OnInit {
        this.obj=todoData.filter(function(event){
         return event.dueDate.indexOf(value) >- 1 
       })
+      this.todoData1=this.obj;
   }
 
 

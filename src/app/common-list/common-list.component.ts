@@ -19,7 +19,7 @@ export class CommonListComponent implements OnInit {
   @Output() deleteTodo = new EventEmitter();
 
   search = null;
-  todoData =null;
+  @Input() todoData =null;
 
  
   constructor(private service: TodoDataService) { }
@@ -75,6 +75,7 @@ export class CommonListComponent implements OnInit {
 
 //search input value in list
   searchData(value, keyName) {
+  
     this.obj = this.todoData.filter(function (event) {
       return (event[keyName]).indexOf(value) > -1
     
@@ -83,6 +84,7 @@ export class CommonListComponent implements OnInit {
   } 
 //sorting the list
   sorting(keyName) {
+
     this.obj.sort(function (a, b) {
       if (a[keyName] < b[keyName]) return -1;
       if (a[keyName] > b[keyName]) return 1;
@@ -94,7 +96,6 @@ export class CommonListComponent implements OnInit {
 
   ngOnInit() {
 
-setTimeout(()=>(this.todoData = this.obj),2000);
 
   }
 }

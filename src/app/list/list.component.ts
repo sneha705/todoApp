@@ -19,6 +19,7 @@ export class ListComponent implements OnInit {
     this.service.getData()
       .subscribe((data) => {
         this.obj = data;
+        this.todoData=this.obj;
       });
   }
 
