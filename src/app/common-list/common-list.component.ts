@@ -22,7 +22,7 @@ x;
   @Input() todoData =null;
 
  
-  constructor(private service: TodoDataService) { }
+  constructor(public service: TodoDataService) { }
 //delete function call by service
   deleteTodoData(id: string) {
     swal({
