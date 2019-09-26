@@ -10,7 +10,7 @@ import { TodoDataService } from '../todo-data.service'
 
 export class ListComponent implements OnInit {
   id = null;
-  obj = null;
+  obj=null;
   data1 = null;
   todoData = null;
   constructor(private service: TodoDataService) { }

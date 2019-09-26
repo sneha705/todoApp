@@ -63,7 +63,8 @@
                         <button type='submit' [disabled]="!todoForm.valid" (click)="onSubmit()">Save</button>
                 </div>
                 <div>
-                        <button id="update" type="submit" (click)="onUpdate()"  *ngIf="editObj && hideUpdateBtn">update</button>
+                               <button id="update" type="submit" (click)="onUpdate()"  *ngIf="editObj && hideUpdateBtn">
+                                       update</button>
                 </div>
         </div>
                 

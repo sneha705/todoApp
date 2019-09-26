@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import {TodoDataService} from '../todo-data.service';
 import { DatePipe } from '@angular/common';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 declare var swal: any;
  
 @Component({
@@ -19,7 +20,8 @@ export class AddTodoComponent implements OnInit {
   
   constructor(private fb: FormBuilder,
     private todoService:TodoDataService,
-    private datePipe: DatePipe,) {}  
+    private datePipe: DatePipe,
+    private router: Router) {}  
   
   todoForm=this.fb.group({
     name :['', Validators.required],
@@ -50,6 +52,7 @@ export class AddTodoComponent implements OnInit {
     subscribe(
       (val) => {
         swal("Successfully!", "One Todo task UPDATED", "success");
+        this.router.navigateByUrl('/list');
       },
       response => {
         alert("Internal Data Entry Error");
