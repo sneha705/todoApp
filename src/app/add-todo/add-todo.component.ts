@@ -53,6 +53,7 @@ export class AddTodoComponent implements OnInit {
     subscribe(
       (val) => {
         swal("Successfully!", "One Todo task UPDATED", "success");
+        this.todoForm.reset();
         this.router.navigateByUrl('/list');
       },
       response => {

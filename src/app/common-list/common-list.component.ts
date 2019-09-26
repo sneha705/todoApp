@@ -12,7 +12,7 @@ declare var swal: any;
 })
 
 export class CommonListComponent implements OnInit {
-x;
+
   //passing todo data and store in obj
   @Input() obj;
   //passing deleted id to other component
