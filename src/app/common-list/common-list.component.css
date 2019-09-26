@@ -28,9 +28,7 @@ select{
     position: relative;
     display: inline-block;
   }
-  .dropbtn{
-    border:none;
-  }
+
   
 tr:hover{
   background-color:rgba(150, 109, 167, 0.993); 

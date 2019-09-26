@@ -83,7 +83,7 @@ x;
 
   } 
 //sorting the list
-  sorting(keyName) {
+  sorting1(keyName) {
 
     this.obj.sort(function (a, b) {
       if (a[keyName] < b[keyName]) return -1;
@@ -91,8 +91,39 @@ x;
       return 0;
     });
   }
+  sorting(keyName) {
+    if(keyName=="priority"){
+      this.obj.sort(function (a, b) {
+        if (a[keyName] < b[keyName]) return -1;
+        if (a[keyName] > b[keyName]) return 1;
+        return 0;
+      });
+    }
+else{
+    this.obj.sort(function (a, b) {
+      return  a[keyName].toLowerCase().localeCompare(b[keyName].toLowerCase());
 
+    
+    });
+  }
+  }
 
+  descSorting(keyName) {
+    if(keyName=="priority"){
+      this.obj.sort(function (a, b) {
+        if (a[keyName] >b[keyName]) return -1;
+        if (a[keyName] <b[keyName]) return 1;
+        return 0;
+      });
+    }
+else{
+    this.obj.sort(function (a, b) {
+      return  b[keyName].toLowerCase().localeCompare(a[keyName].toLowerCase());
+
+    
+    });
+  }
+  }
 
   ngOnInit() {
 

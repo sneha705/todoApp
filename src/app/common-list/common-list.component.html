@@ -11,7 +11,7 @@
                     <th><input placeholder="search" #searchDescription
                        (input)="searchData(searchDescription.value,'description')">
                     </th>
-                    <th><input placeholder="search yyyy-MM-dd" #searchDate
+                    <th><input type="date" #searchDate
                             (input)="searchData(searchDate.value,'dueDate')">
                     </th>
                     <th><input placeholder="search" #searchTime (input)="searchData(searchTime.value,'createdAt')">
@@ -26,12 +26,16 @@
 
                         <button class="dropbtn" (click)="sorting('_id')"><i class="fa fa-caret-down"
                                 aria-hidden="true"></i></button>
+                        <button class="dropbtn" (click)="descSorting('_id')">
+                                <i class="fa fa-sort-asc" aria-hidden="true"></i></button>
 
                     </th>
                     <th rowspan="2">Title
 
                         <button class="dropbtn" (click)="obj.sort(sorting('name'))"><i class="fa fa-caret-down"
                                 aria-hidden="true"></i></button>
+                        <button class="dropbtn" (click)="descSorting('name')">
+                               <i class="fa fa-sort-asc" aria-hidden="true"></i></button>        
 
                     </th>
                     <th rowspan="2">Description
@@ -40,17 +44,24 @@
                     <th rowspan="2">Date
                         <button class="dropbtn" (click)="sorting('dueDate')"><i class="fa fa-caret-down"
                                 aria-hidden="true"></i></button>
+                        <button class="dropbtn" (click)="descSorting('dueDate')">
+                                <i class="fa fa-sort-asc" aria-hidden="true"></i></button>          
                     </th>
                     <th rowspan="2">Time
 
                         <button class="dropbtn" (click)="sorting('createdAt')"><i class="fa fa-caret-down"
                                 aria-hidden="true"></i></button>
+                        <button class="dropbtn" (click)="descSorting('createdAt')">
+                                <i class="fa fa-sort-asc" aria-hidden="true"></i></button>  
 
 
                     </th>
                     <th rowspan="2">Priority
                         <button class="dropbtn" (click)="sorting('priority')"><i class="fa fa-caret-down"
                                 aria-hidden="true"></i></button>
+                        <button class="dropbtn" (click)="descSorting('priority')">
+                                <i class="fa fa-sort-asc" aria-hidden="true"></i></button>  
+                                
                     </th>
                     <th rowspan="2">Edit</th>
                     <th colspan="2">Action</th>

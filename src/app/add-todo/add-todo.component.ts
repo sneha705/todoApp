@@ -41,6 +41,7 @@ export class AddTodoComponent implements OnInit {
     this.todoService. addTodoData(this.todoForm.value).
       subscribe((val) => {
           swal("Successfully!", "One Todo task ADDED", "success");
+          this.todoForm.reset();
         },
         error => {
           alert("Internal Data Entry Error");
