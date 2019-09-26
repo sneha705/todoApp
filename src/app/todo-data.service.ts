@@ -39,9 +39,10 @@ export class TodoDataService {
     return this.http.delete(url, this.httpOptions)
   }
 
-  todoEditObj(i, id) {
+  todoEditObj(i,) {
     this.EditObj = i;
-    this.editObjId = id;
+    this.editObjId = i._id;
+   
   }
 
   editTodoData(data: todoDataformat) {

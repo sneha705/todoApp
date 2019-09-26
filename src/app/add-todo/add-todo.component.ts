@@ -13,6 +13,7 @@ declare var swal: any;
  
 })
 export class AddTodoComponent implements OnInit {
+  
   editObj;
   dateInput=true;
   hideUpdateBtn=true;
@@ -53,12 +54,15 @@ export class AddTodoComponent implements OnInit {
     subscribe(
       (val) => {
         swal("Successfully!", "One Todo task UPDATED", "success");
-        this.todoForm.reset();
-        this.router.navigateByUrl('/list');
+       
+       // this.router.navigateByUrl('/list');
       },
       response => {
         alert("Internal Data Entry Error");
       });
+      this.todoService.todoEditObj("");
+      this.todoForm.reset();
+      this.router.navigateByUrl('/list')
   }
 
    resetDate(){
@@ -69,15 +73,17 @@ export class AddTodoComponent implements OnInit {
     this.hideUpdateBtn=false
    }
 
+setEditData(){
+  this.editDate=(this.datePipe.transform(this.editObj.dueDate, 'yyyy-MM-dd'));
+  this.todoForm.get('name').setValue(this.editObj.name)
+  this.todoForm.get('description').setValue(this.editObj.description)
+  this.todoForm.get('dueDate').setValue(this.editDate)   ;
+}
   
    
   ngOnInit() {
   this.editObj=this.todoService.EditObj;
-     //console.log(this.editObj.priority)
-  this.editDate=(this.datePipe.transform(this.editObj.dueDate, 'yyyy-MM-dd'));
-  this.todoForm.get('name').setValue(this.editObj.name)
-  this.todoForm.get('description').setValue(this.editObj.description)
-  this.todoForm.get('dueDate').setValue(this.editDate)   
+  this.setEditData()
   
 
   }
